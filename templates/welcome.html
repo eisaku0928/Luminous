@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome to Luminous
+{% endblock %}
+
+{% block main %}
+    <div id="center">
+        <img src="/static/luminous_logo.png" class="title-logo">
+        <!--Title-->
+        <div class="luminous_welcome">
+            <strong><p>Welcome to Luminous.</p></strong>
+        </div>
+        <h1><b>I am your companion to live a happier life.</b></h1>
+        
+        <br>
+        <br>
+        <!--"GET" /register if register button is clicked-->
+        <a href="/register"><button class="open" type="button">Register</button></a>
+        
+        <br>
+        <br>
+        <!--"GET" /login if register button is clicked-->
+        <a href="/login"><button class="open" type="button">Log in</button></a>  
+    </div>
+{% endblock %}

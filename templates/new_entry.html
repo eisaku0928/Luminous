@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    New Journal Entry
+{% endblock %}
+
+{% block main %}
+    <!--Logo-->
+    <center><img src="/static/luminous_logo.png" class="logo"></center>
+    <!--Back button-->
+    <strong><a href="/journal" class="back">← Back</a></strong>
+    
+    <!--Title of page-->
+    <div class="journal_entry_title">
+        <p><strong>{{ name }}'s New Journal Entry</strong></p>
+    </div>
+        
+    <form action="/insert_new_entry" method="post">    
+    
+        <div id="new-entry-container">
+            
+            <!--Title of Entry-->
+            <div>
+                <p id="entry-title"><strong>Title:</strong></p>
+                <input autocomplete="off" autofocus type="text" name="title" id="title-input">
+                <br><br>
+            </div>
+            
+            <!--Mood Selector-->
+            <div>
+                <p id="entry-title"><strong>How are you feeling today?</strong></p>
+                <div id="mood_selector">
+                    <div id="SelectMood"></div>
+                </div>
+                <br><br>
+                <input type="range" min="0" max="120" value ="60" name="mood_slider" id="mood_slider">
+            </div>
+            
+        </div>
+        
+        <br><br>
+        <!--Journal Text-->
+        <div id="entry-text-container">
+            <p id="entry-title"><strong>Here's space for you to write!</strong></p>
+            <center><textarea id="text" name="text"></textarea></center>
+        </div>
+        
+        <br><br>
+        
+        <div id="submit-container">
+            <button class="open" type="submit">Submit to your Journal!</a></button>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        // Tutorial for sliders: https://www.youtube.com/watch?v=Ow0QjqmaRtQ and https://www.youtube.com/watch?v=VepIEWf_IYg
+        // But came up with original method using the tutorial
+        var mood_slider = document.getElementById("mood_slider")
+        var SelectMood = document.getElementById("SelectMood")
+        
+        SelectMood.innerHTML = '🙂';
+        
+        mood_slider.oninput = function(){
+                    
+            var mood = this.value;
+            
+            if (0 <= mood && mood <= 20){
+                SelectMood.innerHTML = '😩'
+            }
+            else if (20 < mood && mood <= 40){
+                SelectMood.innerHTML = '😞'
+            }
+            else if (40 < mood && mood <= 60){
+                SelectMood.innerHTML = '🙂'
+            }
+            else if (60 < mood && mood <= 80){
+                SelectMood.innerHTML = '😄'
+            }
+            else if (80 < mood && mood <= 100){
+                SelectMood.innerHTML = '😆'
+            }
+            else if (100 < mood && mood <= 120){
+                SelectMood.innerHTML = '😊'
+            }
+        }
+        
+        // Allowing tabs within textboxes
+        // https://stackoverflow.com/questions/6637341/use-tab-to-indent-in-textarea
+        $(document).delegate('#text', 'keydown', function(e) {
+              var keyCode = e.keyCode || e.which;
+            
+              if (keyCode == 9) {
+                e.preventDefault();
+                var start = this.selectionStart;
+                var end = this.selectionEnd;
+            
+                // set textarea value to: text before caret + tab + text after caret
+                $(this).val($(this).val().substring(0, start)
+                            + "\t"
+                            + $(this).val().substring(end));
+            
+                // put caret at right position again
+                this.selectionStart =
+                this.selectionEnd = start + 1;
+              }
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome, {{ name }}
+{% endblock %}
+
+{% block main %}
+    <!--Logo-->
+    <center><img src="/static/luminous_logo.png" class="logo"></center>
+    
+    <!--Logout button-->
+    <strong><a href="/logout" class="logout" style="color:black">← Logout</a></strong>
+    
+    <!--Welcome title-->
+    <div class="welcome_title">
+        <p><strong>Welcome, {{ name }}.</strong></p>
+    </div>
+    <!--Options-->
+    <div class="button-container">
+        <a href="/journal"><button class="open">Open Journal</button></a>
+        <br><br>
+        <a href="/mood_tracker"><button class="open">Open Mood Tracker</button></a>
+    </div>
+    
+    <br>
+    
+    <!--Todolist-->
+    <div class="container" id="todo-list">
+        <p id="todolist-title"><strong>Todo List:</strong></p>
+        <form action="/add" id="add_item" method="post">
+            <input autocomplete="off" autofocus type="text" name="todoitem" id="todoitem" placeholder="Add a Task">
+            <button id="submit" type="submit" disabled>Add</button>
+        </form>
+        <!--Incomplete Todos-->
+        {% for todo in incomplete_todos %}
+        <div class="group">
+            <div class="todo-container">
+                <input type="checkbox" id="{{ todo.todo }}" name="{{ todo.todoid }}" onclick="window.location.href='/complete/{{ todo.todoid }}'">
+                <label for="{{ todo.todo }}">{{ todo.todo }}</label>
+            </div>
+                <button class="delete"><a href="/delete/{{ todo.todoid }}">Delete</a></button>
+        </div>
+        {% endfor %}
+        
+        <br><br>
+        
+        <!--Complete Todos-->
+        <p id="todolist-title"><strong>Complete Todos:</strong></p>
+        {% for todo in complete_todos %}
+        <div class="group">
+            <div class="todo-container">
+                <input type="checkbox" checked id="{{ todo.todo }}" name="{{ todo.todoid }}" onclick="window.location.href='/complete/{{ todo.todoid }}'">
+                <label for="{{ todo.todo }}" id="complete">{{ todo.todo }}</label>
+            </div>
+                <button class="delete"><a href="/delete/{{ todo.todoid }}">Delete</a></button>
+        </div>
+        {% endfor %}
+    
+    </div>
+
+    <script>
+        // Check for every time the user lifts their finger of the key
+        // if nothing is typed disable the submit button
+        document.querySelector('#todoitem').onkeyup = function() {
+            if (document.querySelector('#todoitem').value === '') {
+                document.querySelector('#submit').disabled = true;
+            } else {
+                document.querySelector('#submit').disabled = false;
+            }
+        }
+    </script>
+    
+{% endblock %}

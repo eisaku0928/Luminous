@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ name }}'s Journal
+{% endblock %}
+
+{% block main %}
+    <!--Logo-->
+    <center><img src="/static/luminous_logo.png" class="logo"></center>
+    
+    <strong><a href="/homepage" class="back">← Back</a></strong>
+    <div class="welcome_title">
+        <p><strong>{{ name }}'s Journal</strong></p>
+    </div>
+    <div class="button-container">
+        <a href="/new_entry"><button class="open">Add a new entry</button></a>
+    </div>
+    <div class="container">
+        {% for entry in entries %}
+        <div id="entries">
+                <ul>
+                    <a href="/open_entry/{{ entry.entry_id }}">
+                        <li>
+                            <b><span>{{ entry.title }}</span>
+                            <p> Mood: {{ entry.mood }}   |   Created at: {{ entry.created_at }}</p></b>
+                        </li>
+                    </a>
+                     <a href="/delete_entry/{{ entry.entry_id }}"><button class="delete">Delete</button></a>
+                </ul>
+        </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}

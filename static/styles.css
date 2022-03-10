@@ -1,0 +1,528 @@
+body
+{
+    background: #EAEBE4;
+}
+
+/*Logo style*/
+.title-logo
+{
+    height: 64px;
+    width: 67px;
+}
+
+.logo
+{
+    text-align: center;
+    height: 64px;
+    width: 67px;
+    margin-top: 30px;
+}
+
+
+/*Retrieved from https://www.w3schools.com/howto/howto_css_center-vertical.asp*/
+#center
+{
+    text-align:center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}   
+
+.welcome_title
+{
+    font-size: 50px;
+    text-align: center;
+    margin: 30px 50px 20px 50px;
+    /*margin-bottom 30px;*/
+}
+
+.luminous_welcome
+{
+    font-size: 50px;
+}
+
+#register-title
+{
+    text-align:center;
+    margin: 0;
+    position: absolute;
+    top:33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#login-title
+{
+    text-align:center;
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50.5%;
+    transform: translate(-50%, -50%);
+}
+
+#register_welcome
+{
+    font-size: 35px;
+}
+
+/*Retrieved hints and tips from https://www.w3schools.com/css/css3_buttons.asp*/
+.button0
+{
+    background-color: Transparent;
+    border: 2px solid #e74c3c;
+    border-radius:4px;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button0:hover
+{
+    background-color: #e74c3c;
+}
+
+#register-message
+{
+    margin-top: 350px;
+}
+
+/*Todo List*/
+/*help from https://www.youtube.com/watch?v=tOggA9H9t-k and https://www.youtube.com/watch?v=cXVbsTT5gU8&t=6s*/
+#todolist-title
+{
+    font-size: 30px;
+    margin:16px 0;
+    border-left: 5px solid #e74c3c;
+    padding-left: 16px;    
+}
+
+.container
+{
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.group
+{
+    padding: 8px 48px;
+    padding-right: 25%;
+}
+
+input[type="checkbox"]
+{
+    display: none;
+}
+
+label
+{
+    position: relative;
+    cursor: pointer;
+}
+
+label::before
+{
+    content: "";
+    background: url("check.png");
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: -41px;
+    top: -5px;
+    
+    transform: scale(0) rotateZ(180deg);
+    transition: all 0.4s cubic-bezier(0.54, 0.01, 0, 1.49);
+}
+
+input[type="checkbox"]:checked + label::before
+{
+    transform: scale(1) rotateZ(0deg);
+}
+
+label::after
+{
+    content: "";
+    border: 2px solid #333333;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: -42px;
+    top: -6px;
+    border-radius: 50%;
+    
+}
+
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.todo-container
+{
+    width: 78%;
+    float: left;
+    margin-top: 10px;
+    /*padding-top: 3px;*/
+}
+
+#complete
+{
+    color: #57585A;
+}
+
+.delete{
+    float: right;
+    background: #e74c3c;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+
+.delete:hover
+{
+    box-shadow: 0 3px 6px black;
+    color: white;
+}
+
+.delete a
+{
+    color: white;
+}
+
+#add_item input
+{
+    display: block;
+    margin: 20px 0;
+    padding: 10px;
+    float: left;
+    border-radius: 4px 0 0 4px;
+    border: 1px;
+    cursor: text;
+    width: 400px;
+    font-size: 14px;
+    outline: none;
+}
+
+#add_item button
+{
+    border: 1.5px solid #e74c3c;
+    background: #e74c3c;
+    padding: 7px 20px;
+    font-size: 16px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    width: 100px;
+    float: left;
+    margin: 20px 0;
+    color: white;
+}
+
+#add_item button:hover
+{
+    box-shadow: 0 3px 6px black;
+}
+
+
+/*CSS code for main button styles*/
+
+.button-container
+{
+    text-align: center;
+}
+
+.open
+{
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    background-color: #e74c3c;
+    border-radius: 20px
+}
+
+.open a
+{
+    color: white;
+}
+
+.open:hover
+{
+    box-shadow: 0 3px 6px black;
+}
+
+.open:active
+{
+    transform: translateY(2px);
+}
+
+
+/*Style for Journal Entries*/
+
+
+/*#entries*/
+/*{*/
+/*    margin-left: 30px;*/
+    /*margin-bottom: px;*/
+/*}*/
+
+#entries ul
+{
+    list-style-type: none;
+    padding: 0;
+}
+
+#entries li
+{
+    padding: 20px;
+    margin: 20px 10px;
+    border-left: 5px solid #ddd;
+    width: 70%;
+    float: left;
+}
+
+#entries li:hover
+{
+    border-color: #e74c3c;
+}
+
+#entries .delete
+{
+    float: right;
+    margin: 60px 0;
+    margin-right: 190px;
+}
+
+/*Journal page*/
+#entries a:link 
+{
+  color: black;
+  text-decoration: none;
+}
+
+#entries a:visited
+{
+    color: black;
+    text-decoration: none;
+}
+
+#entries .delete a
+{
+    color: white;
+    text-decoration: none;
+    border: none;
+}
+
+
+
+/*New journal entry page style*/
+.journal_entry_title
+{
+    font-size: 50px;
+    text-align: center;
+    margin: 50px;
+}
+
+
+#new-entry-container
+{
+    margin-left: 200px;
+    margin-right: 200px;
+    height: 50px;
+    /*width: 60%;*/
+    /*margin: 24% auto;*/
+    position: relative;
+}
+
+#entry-title
+{
+    font-size: 30px;
+    margin:16px 0;
+    border-left: 5px solid #e74c3c;
+    padding-left: 16px;    
+}
+
+#new-entry-container input[type=text]
+{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #e74c3c;
+    background-color: transparent;
+    padding-top: 20px;
+    font-size: 35px;
+    width: 70%;
+}
+
+/*CSS for Mood Selector*/
+#mood_slider
+{
+    -webkit-appearance: none;
+    text-align: center;
+    width: 100%;
+    height: 15px;
+    outline: none;
+    border-radius: 3px;
+    box-shadow: insert 0 3px 18px rgba(0,0,0,0.6);
+}
+
+#mood_slider::-webkit-slider-thumb
+{
+    -webkit-appearance: none;
+    width: 40px;
+    height: 40px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+}
+
+#mood_slider::-webkit-slider-thumb:hover
+{
+    box-shadow: 0 0 0 3px #EAEBE4,
+                0 0 0 6px #e74c3c;
+}
+
+#mood_selector
+{
+    background-color: inherit;
+    border: 3px solid #e74c3c;
+    height: 100px;
+    width: 100px;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(-135deg);
+    margin: auto;
+    left:0;
+    right: 0;
+    top: 100px;
+}
+
+
+#SelectMood
+{
+    color: #e74c3c;
+    font-size: 55px;
+    transform: rotate(135deg);
+    position: relative;
+    top:20px;
+    right: 15px;
+}
+
+/*Entry input text box*/
+#entry-text-container
+{
+    position: relative;
+    margin-left: 200px;
+    margin-right: 200px;
+    height: 50px;
+    top: 36vh;
+    margin-bottom: 100px;
+}
+
+#entry-text-container #text
+{
+    width: 80%;
+    height: 55vh;
+    outline: none;
+    border: 2px solid #EAEBE4;
+    border-radius: 2px;
+}
+
+#entry-text-container textarea
+{
+    font-size: 23px;
+    resize:none;
+    padding: 20px;
+}
+
+/*Entry Submit Button*/
+#submit-container
+{
+    position: absolute;
+    right: 120px;
+    bottom: -40vh;
+    margin-bottom: 70px;
+}
+
+/*Go back to welcome page*/
+#back, #back:hover, #back:visited,
+{
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    margin-left: 100px;
+    /*margin-top: 10px;*/
+    top:-15px;
+    /*top: -10vh;*/
+}
+
+/*Go back to previous page*/
+.back, .back:hover, .back:visited,
+.logout, .logout:hover, .logout:visited
+{
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 0px;
+    top: 50px;
+}
+
+#mood-tracker
+{
+    text-align: center;
+}
+
+/*#entry-submit*/
+/*{*/
+/*    text-align: center;*/
+/*    top: 50vh;*/
+    
+/*}*/
+
+
+/*瑛作!
+Check https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_animate1*/
+
+/*The bottom css is for a better user experience for registering. Come back later.*/
+/*.register_inputs*/
+/*{*/
+/*    border: none;*/
+/*    border-bottom: 2px solid white;*/
+/*    background-color: Transparent;*/
+/*    font-size: 290%;*/
+/*}*/
+
+
+/*Smooth Transitions*/
+/*.transition-fade*/
+/*{*/
+/*    opacity: 1;*/
+/*    transition: 500ms;*/
+/*    transform: translateX(0);*/
+/*    transform-origin: left;*/
+/*}*/
+
+/*.is-animating.transition-fade*/
+/*{*/
+/*    opacity: 1;*/
+/*    transform: translateX(100%);*/
+/*    transform*/
+/*}*/
+
+/*.is-leaving.transition-fade*/
+/*{*/
+/*    opacity: 0;*/
+/*    transform: translateX(0);*/
+/*}*/

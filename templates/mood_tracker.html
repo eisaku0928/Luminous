@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ name }}'s Mood Tracking
+{% endblock %}
+
+{% block main %}
+    <!--Logo-->
+    <center><img src="/static/luminous_logo.png" class="logo"></center>
+    <!--Back button-->
+    <strong><a href="/homepage" class="back">← Back</a></strong>
+    
+    <div class="welcome_title">
+        <p><strong>{{ name }}'s Mood Tracker</strong></p>
+    </div>
+
+    <div id="mood_tracker">
+          <center><img src="static/test.png"></center>
+    </div>
+
+{% endblock %}
