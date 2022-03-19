@@ -1,7 +1,7 @@
 # todolist-webapp
 A todo list web app using Python, SQLite, and Flask.
 
-Luminous is your companion to live a happier life, by allowing you to stay on top of all of your tasks, events and emotions you encounter on a daily basis. This is done through the three features of journaling app, todo list, and a mood tracker. The simplicity and beauty of the design will allow for a pleasurable experience while using it, but more detail of that will be in “Design.md”.
+Luminous is your companion to live a happier life, by allowing you to stay on top of all of your tasks, events, and emotions you encounter on a daily basis. This is done through the three features of journaling app, todo list, and a mood tracker. The simplicity and beauty of the design will allow for a pleasurable experience while using it, but more detail of that will be in “Design.md”.
 This app is still intended to be compiled and configured on the CS50IDE, and should be used through a tablet, laptop, or a PC. Please use chrome to startup this webapp. No additional installations will be needed. The web app is very intuitive in its use. Here are the steps while in use, along with tips for navigating through the page, if any.
 
 1. Opening the web app - You will first be greeted on a welcome page, where you can either register for an account or login with an existing username and password. You will be prompted with messages for invalid inputs either in the login or register page. Every page starting from the next one will have a “back” button to direct you to the previous page.
