@@ -1,10 +1,13 @@
 from flask import Flask, redirect, render_template, request, session, flash
 from flask_session import Session
-from cs50 import SQL
+# from flask.ext.session import Session
+# from cs50 import SQL
 from werkzeug.security import check_password_hash, generate_password_hash
 from functools import wraps
 import datetime
 import matplotlib.pyplot as plt
+
+import sqlite3
 
 app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
@@ -16,7 +19,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Specify sql database
-db = SQL("sqlite:///users.db")
+# db = SQL("sqlite:///users.db")
+db = sqlite3.connect("users.db")
 
 # login required decoration from PSET9 Finance
 def login_required(f):
