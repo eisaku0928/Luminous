@@ -1,5 +1,5 @@
 # Luminous
-A mood tracking web app that combines a to-do list and a journal, called Luminous. SQLite and Flask are used in the backend. This was created in the summer of 2020.
+A mood tracking web app that combines a to-do list and a journal, called Luminous. SQLite and Flask are used in the backend.
 
 ![](https://github.com/EisakuDanielTanaka/todolist-webapp/blob/main/app.jpg)
 
